@@ -1,6 +1,8 @@
 # MATLAB Multiple Point Set Fitting Example
 
-An attempt to implement the Least_Squares Fitting for multiple M-dimensional Point Sets algorithm from https://doi.org/10.1007/s00371-006-0022-6 although not working at the moment.
+An attempt to implement the Least_Squares Fitting for multiple M-dimensional Point Sets algorithm from https://doi.org/10.1007/s00371-006-0022-6 although not working at the moment. 
+
+[Alternative copy from Research Gate](https://www.researchgate.net/publication/225420764_Least-squares_fitting_of_multiple_M_-dimensional_point_sets)
 
 I am hoping to use this algorithm to combine multiple point-sets which represent features of a 2D/3D scene observed from different perspectives and provide a point-set which better represents the true position of said features.
 
