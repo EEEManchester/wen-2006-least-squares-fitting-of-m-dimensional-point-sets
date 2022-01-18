@@ -27,11 +27,24 @@ AB_covariance= (Bm * Am')/n;
 
 [U,D,V] = svd(AB_covariance);
 
-
+r = rank(AB_covariance);
 S = eye(m);
 
-if(det(AB_covariance) <0)
-   S(m,m)=-1; 
+%https://github.com/OpenSLAM-org/openslam_tjtf/blob/master/matlab/ralign.m
+if (r > m - 1) 
+  if (det(AB_covariance) < 0)
+    S(m, m) = -1;
+  end
+elseif (r == m - 1)
+  if (det(U) * det(V) < 0)
+    S(m, m) = -1;
+  end
+else
+  warning('Insufficient rank in covariance to determine rigid transform');
+  R = [1, 0; 0, 1];
+  c = 1;
+  t = [0; 0];
+  return;
 end
 
 DS_trace = trace(D*S);
