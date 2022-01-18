@@ -37,7 +37,7 @@ epsilon = 1E-12;
 
 loop=true;
 iteration = 0;
-iteration_max = 5;
+iteration_max = 50;
 
 while(loop && iteration<iteration_max)
     
@@ -76,22 +76,23 @@ while(loop && iteration<iteration_max)
     
     delta_error = abs(error1 - error2);
     
-    if(delta_error<epsilon)
-        loop = false;
-    end
-    
-    fprintf("i:%d error1:%.15f error2:%.15f delta-error:%f  \n", iteration, error1,error2,delta_error);
+    fprintf("i:%d error1:%.15f error2:%.15f delta-error:%.15f  \n", iteration, error1,error2,delta_error);
     
     if(iteration==1)
         % plot points for figure 3b after first iteration
         plotPoints("Fig 3b", Y1, Y2 ,transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
     end
     
+    if(delta_error<epsilon)
+        loop = false;
+        fprintf("Delta Error less than epsilon:%.15f\n", epsilon);
+    end
+    
+ 
+    
 end
 
-plotPoints("Fig 3c", Y1, Y2 ,transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
-
-
+plotPoints("Fig 3d", Y1, Y2 ,transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
 
 
 
