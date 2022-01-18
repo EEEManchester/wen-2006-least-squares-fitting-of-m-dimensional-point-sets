@@ -20,7 +20,6 @@ Y2 = [
 % build Y
 Y = {Y1,Y2};
 
-
 % dimensions "m" (2 for 2D)
 % number of point sets "k"
 % number of points in a set "n"
@@ -81,15 +80,16 @@ while(loop && iteration<iteration_max)
         loop = false;
     end
     
-    fprintf("i:%d error1:%f error2:%f delta-error:%f  \n", iteration, error1,error2,delta_error);
+    fprintf("i:%d error1:%.15f error2:%.15f delta-error:%f  \n", iteration, error1,error2,delta_error);
     
     if(iteration==1)
         % plot points for figure 3b after first iteration
-        plotPoints("Fig 3b", Y1, Y2, transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
+        plotPoints("Fig 3b", Y1, Y2 ,transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
     end
     
 end
 
+plotPoints("Fig 3c", Y1, Y2 ,transformPoints(Y1,R_list{2}, t_list{2}, c_list{2}),Z);
 
 
 

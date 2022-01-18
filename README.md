@@ -14,6 +14,7 @@ Currently Algorithm 1 from the paper and this implementation provide different r
 
 ## What Works
 The estimation of the transformation between two point-sets performed by the`theorem1` function appears to be OK with the assumption that the initial `Y0` value is set to `Y1`
+The values for `error1` look OK but the values for `error2` look wrong so halting in the way the paper specifies does not work
 
 ## What Doesn't Work
 The second function - `lemma1` returns a value of `Z` which should be similar to the points in `Y1` but is different an the value of error2 is incorrect

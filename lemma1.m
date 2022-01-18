@@ -14,9 +14,10 @@ for i=1:k
     R = R_list{i};
     c = c_list{i};
     t = t_list{i};
-    x0 = x0 + c*R*(x{i}'-t);
+    x0 = x0 + c*R'*(x{i}'-t);
     c2_sum = c2_sum + c^2;
 end
+
 x0 = x0 / c2_sum;
 
 % compute F
