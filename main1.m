@@ -71,7 +71,7 @@ while(loop && iteration<iteration_max)
         end
         [x0,F2] = lemma1(x,R_list,t_list,c_list);
         Z(i,:)= x0;
-        error2 = (error2 + F2) /(k*n);
+        error2 = error2 + (F2 /(n*k));
     end
     
     delta_error = abs(error1 - error2);
