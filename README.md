@@ -10,7 +10,7 @@ I am hoping to use this algorithm to combine multiple point-sets which represent
 
 ## Notes
 ### R-Transpose Issue
-It appears that equation (17) in `lemma1 ` which defines the optimal value of $x_{0}$
+It appears that equation (17) in `lemma 1` which defines the optimal value of $x_{0}$
 
 $$ x_{0}=\frac{\Sigma_{i=1}^k c_{i}R^i  (x_{i} - t_{i})}{\Sigma_{i=1}^k c_{i}^2}$$
 
